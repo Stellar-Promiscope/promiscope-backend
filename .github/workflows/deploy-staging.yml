@@ -153,7 +153,7 @@ jobs:
           target: ${{ secrets.STAGING_DEPLOY_PATH }}
 
       - name: Extract and restart service
-        uses: appleboy/ssh-action@v1.2.0
+        uses: appleboy/ssh-action@v1.2.5
         env:
           DEPLOY_PATH: ${{ secrets.STAGING_DEPLOY_PATH }}
         with:
@@ -196,7 +196,7 @@ jobs:
 
       - name: Rollback on failure
         if: failure()
-        uses: appleboy/ssh-action@v1.2.0
+        uses: appleboy/ssh-action@v1.2.5
         env:
           DEPLOY_PATH: ${{ secrets.STAGING_DEPLOY_PATH }}
         with:
