@@ -61,7 +61,7 @@ jobs:
       # `cache: npm` caches ~/.npm keyed on Node.js version + package-lock.json
       # hash, so `npm ci` below is fast on a cache hit and self-invalidates
       # whenever dependencies change.
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version-file: '.nvmrc'
           cache: npm
