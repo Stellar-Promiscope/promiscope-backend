@@ -36,7 +36,7 @@ jobs:
       K6_SCENARIO: ${{ github.event.inputs.scenario || '' }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # ── Install k6 ───────────────────────────────────────────────────────
       - name: Install k6
