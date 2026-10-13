@@ -171,7 +171,7 @@ jobs:
           target: ${{ secrets.MAINNET_DEPLOY_PATH }}
 
       - name: Extract and deploy (blue-green)
-        uses: appleboy/ssh-action@v1.2.0
+        uses: appleboy/ssh-action@v1.2.5
         env:
           DEPLOY_PATH: ${{ secrets.MAINNET_DEPLOY_PATH }}
         with:
@@ -216,7 +216,7 @@ jobs:
 
       - name: Rollback on readiness failure
         if: failure()
-        uses: appleboy/ssh-action@v1.2.0
+        uses: appleboy/ssh-action@v1.2.5
         env:
           DEPLOY_PATH: ${{ secrets.MAINNET_DEPLOY_PATH }}
         with:
@@ -240,7 +240,7 @@ jobs:
     environment: mainnet
     steps:
       - name: Re-encrypt webhook secrets on server
-        uses: appleboy/ssh-action@v1.2.0
+        uses: appleboy/ssh-action@v1.2.5
         env:
           DEPLOY_PATH: ${{ secrets.MAINNET_DEPLOY_PATH }}
           WEBHOOK_SECRET_ENCRYPTION_KEY: ${{ secrets.WEBHOOK_SECRET_ENCRYPTION_KEY }}
